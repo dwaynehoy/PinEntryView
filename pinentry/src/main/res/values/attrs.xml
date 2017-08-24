@@ -35,6 +35,7 @@
             <flag name="textCapCharacters" value="0x00001001" />
             <flag name="number" value="0x00000002" />
             <flag name="numberPassword" value="0x00000012" />
+            <flag name="textPassword" value="0x00000081" />
         </attr>
         <!-- Only draw accent when View has focus -->
         <attr name="accentRequiresFocus" format="boolean" />
