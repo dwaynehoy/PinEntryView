@@ -300,10 +300,12 @@ public class PinEntryView extends ViewGroup {
      * @param text
      */
     public void setText(CharSequence text) {
-        if (text.length() > digits) {
-            text = text.subSequence(0, digits);
+        if(!editText.getText().toString().equals(text.toString())) {
+            if (text.length() > digits) {
+                text = text.subSequence(0, digits);
+            }
+            editText.setText(text);
         }
-        editText.setText(text);
     }
 
     /**
