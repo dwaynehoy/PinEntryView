@@ -213,6 +213,15 @@ public class PinEntryView extends ViewGroup {
         getChildAt(digits).layout(0, 0, 1, getMeasuredHeight());
     }
 
+    public boolean requestViewFocus(){
+        editText.requestFocus();
+        // Show keyboard
+        InputMethodManager inputMethodManager = (InputMethodManager) getContext()
+                .getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputMethodManager.showSoftInput(editText, 0);
+        return true;
+    }
+
     @Override public boolean onTouchEvent(MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             // Make sure this view is focused
@@ -485,7 +494,7 @@ public class PinEntryView extends ViewGroup {
     /**
      * Custom text view that adds a coloured accent when selected
      */
-    private class DigitView extends TextView {
+    private class DigitView extends android.support.v7.widget.AppCompatTextView {
 
         /**
          * Paint used to draw accent
